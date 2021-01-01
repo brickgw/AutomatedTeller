@@ -23,7 +23,5 @@ stages:
     - task: Docker@2
       displayName: Build an image
       inputs:
-        command: build
-        dockerfile: '$(Build.SourcesDirectory)/AutomatedTeller.Api/Dockerfile'
-        tags: |
-          $(tag)
+        containerRegistry: 'AutomatedTellerServiceConnection'
+        command: 'login'
