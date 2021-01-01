@@ -24,4 +24,6 @@ stages:
       displayName: Build an image
       inputs:
         containerRegistry: 'AutomatedTellerServiceConnection'
-        command: 'login'
+        repository: 'AutomatedTeller'
+        command: 'buildAndPush'
+        Dockerfile: '**AutomatedTeller.Api/Dockerfile'
