@@ -21,6 +21,11 @@ stages:
       vmImage: 'ubuntu-latest'
     steps:
     - task: Docker@2
+      displayName: 'ACR Login' 
+      inputs:
+        containerRegistry: 'AutomatedTellerServiceConnection'
+        command: 'login'
+    - task: Docker@2
       displayName: Build an image
       inputs:
         containerRegistry: 'AutomatedTellerServiceConnection'
