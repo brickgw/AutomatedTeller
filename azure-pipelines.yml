@@ -32,3 +32,13 @@ stages:
         repository: 'AutomatedTeller'
         command: 'buildAndPush'
         Dockerfile: '**AutomatedTeller.Api/Dockerfile'
+    - task: AzureRmWebAppDeployment@4
+      displayName: Deploy To Azure
+      inputs:
+        ConnectionType: 'AzureRM'
+        azureSubscription: 'Visual Studio Enterprise Subscription – MPN'
+        appType: 'webAppContainer'
+        WebAppName: 'AutomatedTellerApi'
+        DockerNamespace: 'AutomatedTeller'
+        DockerRepository: 'automatedteller'
+        DockerImageTag: 'latest'
